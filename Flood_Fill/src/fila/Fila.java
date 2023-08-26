@@ -46,16 +46,20 @@ public class Fila <T>{
     // o método intValue() é usado para obter o valor primitivo int do objeto Integer,
     // dai como a fila é do tipo <T> o temp foi denominado
     // como Integer e o Array data foi castado como Integer
-    public int remove() {
-        Integer temp = (Integer) data[base++];
-        if (temp == null) {
-            throw new NullPointerException("Value at index " + (base - 1) + " is null");
+    public Integer remove() {
+        if (isEmpty()) {
+            System.out.println("A fila está vazia. Não é possível remover.");
+            return null;
         }
-        if (base == tamanhoMaximo) {
-            base = 0;
-        }
-        return temp.intValue();
+
+        Integer temp = (Integer) data[base];
+        data[base] = null;
+        base = move(base);
+        return temp;
     }
+
+
+
 
     // Ja aqui, verifica se a fila tá vazia comparando o valor de top com -1,
     //se ele for -1(que é quando não tem nada na fila) retorna true, senão retorna false ;-;

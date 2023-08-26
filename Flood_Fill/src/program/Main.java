@@ -13,7 +13,7 @@ public class Main {
 
 
         Matriz matriz = new Matriz(10,10);
-        matriz.montaMatriz();
+        matriz.montarMatriz();
         System.out.println("Digite as coordenada: ");
         System.out.print("X(linha): ");
         int x = scanner.nextInt();

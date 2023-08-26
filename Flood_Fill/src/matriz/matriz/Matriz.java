@@ -13,8 +13,8 @@ public class Matriz {
 
     }
 
-    // Método para criar a matriz e deixar ela com diagonal principal feita de 0  e o resto de 1
-    public void montarMatriz() {
+    // estamos montando a matrix e deixando ela com diagonal princiapl feita de 0  e o resto de 1
+    public void montaMatriz() {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 if (i == j) {
@@ -26,8 +26,8 @@ public class Matriz {
         }
     }
 
-    // Método para mostrar a matriz no terminal
-    private static void mostrarMatriz(int[][] matrix) {
+    // mostra a matriz, so isso ela faz
+    private static void mostraMatriz(int[][] matrix) {
         for (int[] row : matrix) {
             for (int cell : row) {
                 System.out.print(cell + " ");

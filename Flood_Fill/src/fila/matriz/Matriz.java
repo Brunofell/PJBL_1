@@ -37,33 +37,36 @@ public class Matriz {
         }
     }
 
-
+public void floodfill(int posicao_x, int posicao_y) {
     //implementa o floodfill aqui
-    public void floodfill(int posicao_x, int posicao_y) {
-        Integer valorInicial = this.matriz[posicao_x][posicao_y];
-        Fila<Integer> fila = new Fila<>(this.matriz.length * this.matriz[0].length);
-        int[] move_x = new int[]{0, 0, 1, -1};
-        int[] move_y = new int[]{1, -1, 0, 0};
-        this.matriz[posicao_x][posicao_y] = 2;
-        fila.add(posicao_x * this.matriz[0].length + posicao_y);
+    int [] move_x = new int[]{0, 0, 1, -1};
+    int [] move_y = new int[]{1, -1, 0, 0};
+    
+    Fila<Integer> fila = new Fila<>(matriz.length * matriz[0].length);
+    
+    fila.add(posicao_x * matriz[0].length + posicao_y);
+    matriz[posicao_x][posicao_y] = 2;
+       
+        if (!fila.isEmpty()) {
+            int coordenadas_atual = fila.remove();
 
-        while (!fila.isEmpty()) {
-            int  coordenadas_atual = fila.remove();
-
-            int linha = coordenadas_atual / this.matriz[0].length;
-            int coluna = coordenadas_atual % this.matriz[0].length;
-
-            for (int i = 0; i < 4; ++i) {
-                int avance_x = linha + move_x[i];
-                int avance_y = coluna + move_y[i];
-                if (avance_x >= 0 && avance_x < this.matriz.length && avance_y >= 0 && avance_y < this.matriz[0].length && this.matriz[avance_x][avance_y] ==valorInicial) {
+            int  linha = coordenadas_atual  /  matriz[0].length;
+            int coluna = coordenadas_atual  %  matriz[0].length;
+           
+            for (int i = 0; i < 4; i++) {
+                int  avance_x = linha + move_x[i];
+                int  avance_y = coluna + move_y[i];
+                if ( avance_x >= 0 && avance_x < matriz.length && avance_y >= 0 && avance_y < matriz[0].length && matriz[avance_x][avance_y] == 1) {
                     this.matriz[avance_x][avance_y] = 2;
-                    fila.add(avance_x * this.matriz[0].length + avance_y);
+                    fila.add(avance_x * matriz[0].length + avance_y);
+                    mostrarMatriz(matriz);
                 }
             }
-            mostrarMatriz(matriz);
         }
     }
+    
+    
+
 
     public void fillPilha(int linhaInicial, int colunaInicial) {
         int[] direcaoX = {-1, 1, 0, 0};
@@ -73,7 +76,7 @@ public class Matriz {
         Pilha<Integer> pilha = new Pilha<>(matriz.length * matriz[0].length);
 
         //Aqui estamos transformando a posição bidimensional em um único indíce e adicionando na pilha
-        pilha.adicionar(linhaInicial * matriz[0].length + colunaInicial);
+        pilha.add(linhaInicial * matriz[0].length + colunaInicial);
 
         //Definimos como 2 para representar que já foi "pintada"
         matriz[linhaInicial][colunaInicial] = 2;
@@ -94,7 +97,7 @@ public class Matriz {
                 //Nesse if, verificamos se não chegou no limite da matriz. Se não tiver chego e o item da posição atual for = 1, iremos "pintar" ele (marcar como 2). Em seguida, a matriz é mostrada
                 if (linhaVizinha >= 0 && linhaVizinha < matriz.length && colunaVizinha >= 0 && colunaVizinha < matriz[0].length && matriz[linhaVizinha][colunaVizinha] == 1) {
                     matriz[linhaVizinha][colunaVizinha] = 2;
-                    pilha.adicionar(linhaVizinha * matriz[0].length + colunaVizinha);
+                    pilha.add(linhaVizinha * matriz[0].length + colunaVizinha);
                     mostrarMatriz(matriz);
                     System.out.println();
                 }

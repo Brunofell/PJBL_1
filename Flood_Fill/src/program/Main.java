@@ -16,9 +16,10 @@ public class Main {
         int x = scanner.nextInt();
         System.out.print("Y(coluna): ");
         int y = scanner.nextInt();
-
-        matriz.floodfill(x,y);
+        matriz.floodfill(x, y);
+       
 
     }
+
 
 }

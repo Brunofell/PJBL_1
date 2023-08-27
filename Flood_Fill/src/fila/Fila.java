@@ -14,6 +14,7 @@ public class Fila <T>{
         base = 0;
         top = -1;
     }
+    
 
     //Explicação sobre o que eu mudei no0 add():
     // ele recebe um valor do tipo Generics, dai ele verifica se o top(o topo da fila que nem a marina disse)
@@ -21,7 +22,7 @@ public class Fila <T>{
     // dai ele reinicia o top pra -1 (top = -1;) , colocando o indice no inicio da fila circular
     // dai o elemento é adicionado na posição ++top no array data. so isso
     public void add(T value) {
-        if (top == tamanhoMaximo - 1) {
+        if (top <=tamanhoMaximo - 1) {
             top = -1;
         }
         data[++top] = value;
@@ -47,17 +48,29 @@ public class Fila <T>{
     // dai como a fila é do tipo <T> o temp foi denominado
     // como Integer e o Array data foi castado como Integer
     public Integer remove() {
-        if (isEmpty()) {
-            System.out.println("A fila está vazia. Não é possível remover.");
-            return null;
+        try {
+            if (isEmpty()) {
+                System.out.println("A fila está vazia. Não é possível remover.");
+                return null;
+            }
+    
+            Integer temp = (Integer) data[++base];
+            data[++base] = null;
+            base = move(base);
+    
+            if (temp != null) {
+                return temp.intValue();
+            } else {
+                return null;
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Ocorreu uma NullPointerException ao remover da fila.");
+            e.printStackTrace(); // Isso imprime informações sobre a exceção para depuração.
+            return null; // Ou outra ação que você queira tomar ao lidar com a exceção.
         }
-
-        Integer temp = (Integer) data[base];
-        data[base] = null;
-        base = move(base);
-        return temp;
     }
-
+    
+    
 
 
 

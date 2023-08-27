@@ -76,7 +76,7 @@ public void floodfill(int posicao_x, int posicao_y) {
         Pilha<Integer> pilha = new Pilha<>(matriz.length * matriz[0].length);
 
         //Aqui estamos transformando a posição bidimensional em um único indíce e adicionando na pilha
-        pilha.add(linhaInicial * matriz[0].length + colunaInicial);
+        pilha.adicionar(linhaInicial * matriz[0].length + colunaInicial);
 
         //Definimos como 2 para representar que já foi "pintada"
         matriz[linhaInicial][colunaInicial] = 2;
@@ -97,7 +97,7 @@ public void floodfill(int posicao_x, int posicao_y) {
                 //Nesse if, verificamos se não chegou no limite da matriz. Se não tiver chego e o item da posição atual for = 1, iremos "pintar" ele (marcar como 2). Em seguida, a matriz é mostrada
                 if (linhaVizinha >= 0 && linhaVizinha < matriz.length && colunaVizinha >= 0 && colunaVizinha < matriz[0].length && matriz[linhaVizinha][colunaVizinha] == 1) {
                     matriz[linhaVizinha][colunaVizinha] = 2;
-                    pilha.add(linhaVizinha * matriz[0].length + colunaVizinha);
+                    pilha.adicionar(linhaVizinha * matriz[0].length + colunaVizinha);
                     mostrarMatriz(matriz);
                     System.out.println();
                 }

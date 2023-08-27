@@ -13,8 +13,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Matriz matriz = new Matriz(10,10);
  
-       
- 
+
         while (true){
 
             System.out.println("Digite [1] para selecionar a fila ou digite [2] para selecionar a pilha: ");
@@ -27,7 +26,6 @@ public class Main {
                 int posicao_y_fila = scanner.nextInt();
                 matriz.montarMatriz();
                 matriz.floodfillFila(posicao_x_fila, posicao_y_fila);
-                
                 break;
             }
             if (opcao == 2){

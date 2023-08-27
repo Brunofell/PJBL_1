@@ -36,7 +36,8 @@ public class Pilha<T> {
         if (!estaVazia()) {  
             T a = stack[top];
             stack[top] = null;  
-            top--;  
+            top--;
+            isEmpty = (top == -1);
             isFull=false;
             return a;
 

@@ -16,24 +16,33 @@ public class Pilha<T> {
         this.isFull = false;
         this.isEmpty = true;
     }
-   public void add(T element) {
-        if (top < size - 1) {
-            stack[++top] = element;
-            isEmpty = false;
-            isFull = top == size - 1;
-        } else {
+
+    public void adicionar(T value) {
+
+        //Se o topo for menor que a pilha e ela não estiver cheia, adiciona um valor no topo e aumenta o indíce dele
+
+        if (top < this.stack.length && !estaCheia())  { 
+            stack[++top] = value;       
+            isEmpty = false; 
+        } else{; 
             System.out.println("A pilha está cheia. Não é possível adicionar.");
         }
     }
 
     public T remover() {
-        if (top >= 0) {
-            T temp = stack[top--];
-            isEmpty = top == -1;
-            return temp;
+
+        //Se a pilha não estiver vazia, ele vai remover o valor localizado no topo, vai diminuir o indíce do top e vai definir o isfull como falso, além de retornar o valor removido.
+
+        if (!estaVazia()) {  
+            T a = stack[top];
+            stack[top] = null;  
+            top--;  
+            isFull=false;
+            return a;
+
         } else {
             System.out.println("A pilha está vazia. Não é possível remover.");
-            return null;
+            return null;  
         }
     }
 

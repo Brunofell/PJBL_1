@@ -12,7 +12,14 @@ public class Matriz {
         this.linha = linha;
         this.matriz = new int[linha][coluna];
 
-    }
+        // Inicialização com o valor padrão (0)
+        for (int i = 0; i < linha; i++) {
+            for (int j = 0; j < coluna; j++) {
+                matriz[i][j] = 0;
+            }
+        }
+}
+
 
     // método para montar a matriz e deixar ela com diagonal principal feita de 0 e o resto de 1
     public void montarMatriz() {
@@ -47,30 +54,24 @@ public class Matriz {
         matriz[posicao_x][posicao_y] = 2;
 
         while (!fila.isEmpty()) {
-            int coordenadas_atual = fila.remove(); // Remova o elemento da fila
 
-            int linha = coordenadas_atual / matriz.length;
-            int coluna = coordenadas_atual % matriz[0].length;
+                int coordenadas_atual = fila.remove(); // problema ta aqui
 
-            for (int i = 0; i < 4; i++) {
-                int avance_x = linha + move_x[i];
-                int avance_y = coluna + move_y[i];
-                if (avance_x >=0 && avance_x < matriz.length && avance_y >=0 && avance_y < matriz[0].length && matriz[avance_x][avance_y] == 1) {
-                    matriz[avance_x][avance_y] = 2;
-                    fila.add(avance_x * matriz[0].length + avance_y);
-                    mostrarMatriz(matriz);
-                    System.out.println();
+                int linha = coordenadas_atual / matriz.length;
+                int coluna = coordenadas_atual % matriz[0].length;
+
+                for (int i = 0; i < 4; i++) {
+                    int avance_x = linha + move_x[i];
+                    int avance_y = coluna + move_y[i];
+                    if (avance_x >= 0 && avance_x < matriz.length && avance_y >= 0 && avance_y < matriz[0].length && matriz[avance_x][avance_y] == 1) {
+                        matriz[avance_x][avance_y] = 2;
+                        fila.add(avance_x * matriz[0].length + avance_y);
+                        mostrarMatriz(matriz);
+                        System.out.println();
+                    }
                 }
             }
-
-            // Após preencher uma célula, mostre a matriz atualizada
-
         }
-    }
-
-
-
-
 
 
     public void fillPilha (int linhaInicial, int colunaInicial) {

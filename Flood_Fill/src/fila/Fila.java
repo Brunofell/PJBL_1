@@ -14,20 +14,24 @@ public class Fila<T> {
         tamanhoAtual = 0;
     }
     public void add(T value) {
-        if (top == tamanhoMaximo - 1) {
+        if (top == tamanhoMaximo - 1) { // verifica se atingiu o limite
             top = -1;
         }
-        data[++top] = value;
-        tamanhoAtual++;
+        top++;
+        data[top] = value; // incrementa top e adiciona o value no lugar d otop
+        tamanhoAtual++; // + 1 tamanho
     }
-    public T remove() {
-            T temp = data[base++];
+    public T remove() { // remove seguindo a logica fifo
+            T temp = data[base]; // Armazena o elemento da variável temporária na fila na posição base
+            base++;                /// incrementa base = avança pro proximo elemento da fila
             if (base == tamanhoMaximo) {
                 base = 0;
-            }
-            tamanhoAtual--;
-            return temp;
+            } // garantir circular
+            tamanhoAtual--; // diminui o tamanho atual
+            return temp;// retorna o elemento removido
     }
+
+
     public boolean isEmpty() {
         return tamanhoAtual == 0;
     }

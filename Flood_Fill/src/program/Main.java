@@ -41,9 +41,9 @@ public class Main {
             }if(opcao==3){
                     System.out.println("tchau!!!");
                     break;
-                }else{
+            }else{
                     System.out.println("Dado inválido! Tente novamente:");
-                }
+            }
             }catch (InputMismatchException e){
                 System.out.println("Dado inválido: ");
                 scanner.next();

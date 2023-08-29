@@ -1,4 +1,5 @@
-<h1 align="center" style="color: #6f42c1; margin-bottom: 20px;">Implementação do Algoritmo Flood Fill</h1>
+<p align="center"><img src="https://media.giphy.com/media/J2thcAg6FNq2BkHzSp/giphy.gif" alt="personagemlol" width="100">
+</p> <h1 align="center" style="color: #6f42c1; margin-bottom: 20px;">    Implementação do Algoritmo Flood Fill</h1>
 
 <p align="center" style="color: #6f42c1; line-height: 1.6;">O Flood Fill é utilizado na ferramenta de &quot;preenchimento de balde&quot; de softwares de desenho e em jogos como Go e Campo Minado para limpar posições. <br>Neste projeto, implementaremos uma versão simplificada do algoritmo usando pilhas e filas para armazenamento de dados da matriz.</p>
 

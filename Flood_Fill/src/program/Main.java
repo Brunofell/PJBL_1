@@ -27,7 +27,7 @@ public class Main {
                 System.out.print("Y(coluna): ");
                 int posicao_y_fila = scanner.nextInt();
                 matriz.montarMatriz();
-                matriz.floodfillFila(posicao_x_fila, posicao_y_fila);
+                matriz.floodfillFila((posicao_x_fila - 1), (posicao_y_fila-1));
             }
             if (opcao == 2){
                 System.out.println("Digite as coordenada: ");
@@ -36,7 +36,7 @@ public class Main {
                 System.out.print("Y(coluna): ");
                 int posicao_y_pilha = scanner.nextInt();
                 matriz.montarMatriz();
-                matriz.fillPilha(posicao_x_pilha, posicao_y_pilha);
+                matriz.fillPilha((posicao_x_pilha -1), (posicao_y_pilha-1));
 
             }if(opcao==3){
                     System.out.println("tchau!!!");

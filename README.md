@@ -12,4 +12,4 @@
 
 <h3 align="center" style="color: #6f42c1; margin-bottom: 20px;">Equipes:</h3>
 
-<p style="color: #555; line-height: 1.6;">Fila - Bruno Feliciano e Micael Fone <br> Pilha - Leandro Faria e Thiago Luz</p>
+<p align="center" style="color: #6f42c1; line-height: 1.6;">Fila - Bruno Feliciano e Micael Fone <br> Pilha - Leandro Faria e Thiago Luz</p>

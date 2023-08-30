@@ -14,12 +14,11 @@ public class Matriz {
         this.linha = linha;
         this.matriz = new int[linha][coluna];
 
-        // Inicialização com o valor padrão (0)
-        for (int i = 0; i < linha; i++) {
-            for (int j = 0; j < coluna; j++) {
-                matriz[i][j] = 0;
-            }
-        }
+//        for (int i = 0; i < linha; i++) {
+//            for (int j = 0; j < coluna; j++) {
+//                matriz[i][j] = 0;
+//            }
+//        }
 }
 
     // método para montar a matriz e deixar ela com diagonal principal feita de 0 e o resto de 1
@@ -106,7 +105,5 @@ public class Matriz {
                     }
                 }
             }
-
         }
-
 }

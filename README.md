@@ -9,8 +9,13 @@
 <p align="center">
 <img src="/assets/img1.png">
 </p>
+<p align="center">
 <img src="/assets/img2.png">
+</p>
+<p align="center">
 <img src="/assets/img3.png">
+</p>
+
 <h2 align="center" style="color: #6f42c1; margin-bottom: 20px;">Como funciona?</h2>
 
 <p style="color: #555; line-height: 1.6;">1- Ao inicializar o código, vai aparecer a opção de escolher [1] Fila ou [2] Pilha.<br>2- Ao escolher uma opção, será necessário informar uma linha e uma coluna.<br>3- Depois de escolher a coluna, a matriz será imprimida automaticamente no terminal, mostrando o preenchimento dos números &quot;1&quot; por &quot;2&quot;.</p>

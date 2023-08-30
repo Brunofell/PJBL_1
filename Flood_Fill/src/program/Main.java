@@ -9,7 +9,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Matriz matriz = new Matriz(10,10);
 
-
         while (true){
             try{
                 System.out.println("-------------------------------------------");
@@ -66,7 +65,3 @@ public class Main {
     
     }
 }
-
-
- 
-

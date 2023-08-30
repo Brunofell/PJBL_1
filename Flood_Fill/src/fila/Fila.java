@@ -21,20 +21,25 @@ public class Fila<T> {
         data[top] = value; // incrementa top e adiciona o value no lugar d otop
         tamanhoAtual++; // + 1 tamanho
     }
-    public T remove() { // remove seguindo a logica fifo
-            T temp = data[base]; // Armazena o elemento da variável temporária na fila na posição base
-            base++;                /// incrementa base = avança pro proximo elemento da fila
-            if (base == tamanhoMaximo) {
-                base = 0;
-            } // garantir circular
-            tamanhoAtual--; // diminui o tamanho atual
-            return temp;// retorna o elemento removido
-    }
 
+    //atualiza a base e retorna o temporario
+    public T remove() { // remove seguindo a logica fifo
+        if (tamanhoAtual == 0) {
+            System.out.println("A fila está vazia."); // ta verificando se a fila está vazia
+        }
+        T temp = data[base]; // Armazena o elemento da variável temporária na fila na posição base
+        base++;                /// incrementa base = avança pro proximo elemento da fila
+        if (base == tamanhoMaximo) {
+            base = 0;
+        } // garantir circular
+        tamanhoAtual--; // diminui o tamanho atual
+        return temp;// retorna o elemento removido
+    }
 
     public boolean isEmpty() {
         return tamanhoAtual == 0;
     }
+
     public void clear() {
         for (int i = 0; i < data.length; i++) {
             data[i] = null;

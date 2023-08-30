@@ -14,14 +14,12 @@ public class Matriz {
         this.linha = linha;
         this.matriz = new int[linha][coluna];
 
-        // Inicialização com o valor padrão (0)
-        for (int i = 0; i < linha; i++) {
-            for (int j = 0; j < coluna; j++) {
-                matriz[i][j] = 0;
-            }
-        }
+//        for (int i = 0; i < linha; i++) {
+//            for (int j = 0; j < coluna; j++) {
+//                matriz[i][j] = 0;
+//            }
+//        }
 }
-
 
     // método para montar a matriz e deixar ela com diagonal principal feita de 0 e o resto de 1
     public void montarMatriz() {
@@ -38,14 +36,13 @@ public class Matriz {
 
     // método para exibir a matriz no terminal
     private static void mostrarMatriz(int[][] matrix) {
-        for (int[] row : matrix) {
-            for (int cell : row) {
-                System.out.print(cell + " ");
+        for (int[] linha : matrix) {
+            for (int position : linha) {
+                System.out.print(position + " ");
             }
             System.out.println();
         }
     }
-
     public void floodfillFila(int posicao_x, int posicao_y) {
         int[] move_x = new int[]{0, 0, 1, -1};
         int[] move_y = new int[]{1, -1, 0, 0};
@@ -57,7 +54,7 @@ public class Matriz {
 
         while (!fila.isEmpty()) {
 
-                int coordenadas_atual = fila.remove(); // problema ta aqui
+                int coordenadas_atual = fila.remove();
 
                 int linha = coordenadas_atual / matriz.length;
                 int coluna = coordenadas_atual % matriz[0].length;
@@ -75,7 +72,6 @@ public class Matriz {
             }
         }
 
-
     public void fillPilha (int linhaInicial, int colunaInicial) {
             int[] direcaoX = {-1, 1, 0, 0};
             int[] direcaoY = {0, 0, -1, 1};
@@ -88,10 +84,8 @@ public class Matriz {
 
             //Definimos como 2 para representar que já foi "pintada"
             matriz[linhaInicial][colunaInicial] = 2;
-
             
             while (!pilha.estaVazia()) {
-                
                 //Aqui convertemos o indice em uma posição bi dimensional novamente
                 int valorAtual = pilha.remover();
                 int l = valorAtual / matriz[0].length;
@@ -111,7 +105,5 @@ public class Matriz {
                     }
                 }
             }
-
         }
-
 }
